@@ -135,7 +135,7 @@ const Chat = () => {
                 {msg.text}
               </div>
 
-              {/* ⭐ CONTEXT DISPLAY (Only shows if toggle is ON and context exists) */}
+              {/* CONTEXT DISPLAY (Only shows if toggle is ON and context exists) */}
               {showContext && msg.sender === "bot" && msg.context && (
                 <div style={{
                   marginTop: "5px",
