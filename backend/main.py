@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # --- PERSISTENT FOLDER CONFIG ---
-UPLOAD_DIR = "data/source_docs"  # Changed from 'temp' to something that sounds permanent
+UPLOAD_DIR = "data/source_docs"  
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 chat_sessions: Dict[str, List[Dict[str, str]]] = {}
