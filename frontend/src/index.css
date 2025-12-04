@@ -1,0 +1,125 @@
+:root {
+  --bg-color: #1a1a1a;
+  --chat-bg: #242424;
+  --user-msg-bg: #2b5278;
+  --bot-msg-bg: #3a3a3a;
+  --text-color: #e0e0e0;
+  --accent-color: #646cff;
+  --input-bg: #2a2a2a;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.messages-area {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message.user {
+  align_self: flex-end;
+  background-color: var(--user-msg-bg);
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot {
+  align_self: flex-start;
+  background-color: var(--bot-msg-bg);
+  border-bottom-left-radius: 4px;
+}
+
+.context-section {
+  font-size: 0.85em;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #aaa;
+}
+
+.context-header {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.input-area {
+  padding: 20px;
+  background-color: var(--chat-bg);
+  border-top: 1px solid #333;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: var(--input-bg);
+  color: white;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: 2px solid var(--accent-color);
+  border-color: transparent;
+}
+
+button {
+  padding: 0 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
